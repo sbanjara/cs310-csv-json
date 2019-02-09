@@ -14,7 +14,8 @@ public class Main {
         
         try {
             
-            BufferedReader reader = new BufferedReader(new InputStreamReader(loader.getResourceAsStream("resources" + File.separator + "grades.csv")));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(loader
+                    .getResourceAsStream("resources" + File.separator + "grades.csv")));
             String line;
             
             while((line = reader.readLine()) != null) {
@@ -32,7 +33,8 @@ public class Main {
         
         try {
             
-            BufferedReader reader = new BufferedReader(new InputStreamReader(loader.getResourceAsStream("resources" + File.separator + "grades.json")));            
+            BufferedReader reader = new BufferedReader(new InputStreamReader(loader
+                    .getResourceAsStream("resources" + File.separator + "grades.json")));            
             String line;
             
             while((line = reader.readLine()) != null) {

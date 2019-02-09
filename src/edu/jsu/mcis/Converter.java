@@ -3,6 +3,7 @@ package edu.jsu.mcis;
 import java.io.*;
 import java.util.*;
 import com.opencsv.*;
+import static java.lang.Integer.parseInt;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
@@ -68,6 +69,34 @@ public class Converter {
             Iterator<String[]> iterator = full.iterator();
             
             // INSERT YOUR CODE HERE
+            JSONArray records = new JSONArray(); 
+            JSONObject jsonObject = new JSONObject();
+            
+            String[] header = iterator.next();
+            ArrayList<String> a = new ArrayList<>();
+            ArrayList<ArrayList> data = new ArrayList<>();
+            ArrayList<String> rowHeader = new ArrayList<>();
+            
+            for(int i = 0; i < header.length; i++)
+                a.add(header[i]);
+            
+            while( iterator.hasNext() ) {
+                
+                String[] rows = iterator.next();
+                ArrayList<Integer> tempList = new ArrayList<>();
+                rowHeader.add(rows[0]);
+                for(int i = 0; i < (rows.length) - 1 ; ++i) { 
+                   tempList.add(parseInt(rows[i+1]));                  
+                }
+                data.add(tempList);  
+                
+            }
+            
+            jsonObject.put("colHeader", a);
+            jsonObject.put("rowHeader", rowHeader);
+            jsonObject.put("data", data);
+            records.add(jsonObject);          
+            results = JSONValue.toJSONString(records);
             
         }        
         catch(Exception e) { return e.toString(); }
@@ -86,6 +115,8 @@ public class Converter {
             CSVWriter csvWriter = new CSVWriter(writer, ',', '"', '\n');
             
             // INSERT YOUR CODE HERE
+            
+            
             
         }
         
