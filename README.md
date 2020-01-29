@@ -3,4 +3,4 @@
    This is a program which converts **csv** data to **json** and vice-versa.
   
 ## Running this Program
-   To run this program, you'll Java 8, Netbeans, json simple library, and open csv library. Once you have all these requirements, you can clone this program link in your workstation. Afterwards, you can create a Netbeans project with existing files (i.e. the clone source files).
+   To run this program, you'll need Java 8, Netbeans, json simple library, and open csv library. Once you have all these requirements, you can clone this program link in your workstation. Afterwards, you can create a Netbeans project with existing files (i.e. the clone source files).
